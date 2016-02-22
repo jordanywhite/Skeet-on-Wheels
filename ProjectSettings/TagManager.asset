@@ -7,7 +7,6 @@ TagManager:
   - PlayerWaypoint
   - BirdWaypoint
   - Player
-  - bird
   layers:
   - Default
   - TransparentFX
