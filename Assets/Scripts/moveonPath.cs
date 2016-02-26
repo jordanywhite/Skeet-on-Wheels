@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class moveonPath : MonoBehaviour {
@@ -8,7 +8,7 @@ public class moveonPath : MonoBehaviour {
 	public int CurrentWayPointID = 0;
 	public float speed; //speed to follow the path
 	private float reachDistance = 1.0f;
-	public float rotationSpeed = 5.0f; //Speed we are rotating around the curve
+	public float rotationSpeed = 1.0f; //Speed we are rotating around the curve
 	public string pathName;
 	
 	Vector3 last_position; //where we have been
