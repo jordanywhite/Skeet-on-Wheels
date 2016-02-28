@@ -640,6 +640,10 @@ Prefab:
       propertyPath: m_Name
       value: Gorilla (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100140, guid: dcdd9efcf7611a04092229da6a3ab488, type: 3}
+      propertyPath: m_TagString
+      value: Animal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dcdd9efcf7611a04092229da6a3ab488, type: 3}
   m_IsPrefabParent: 0
@@ -701,7 +705,7 @@ GameObject:
   - 114: {fileID: 509013642}
   m_Layer: 0
   m_Name: aardonyx(5) path
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -960,6 +964,10 @@ Prefab:
       propertyPath: m_Name
       value: Aardonyx (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b7d960cf9ceab9348b53386b67531eaa, type: 3}
+      propertyPath: m_TagString
+      value: Animal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7d960cf9ceab9348b53386b67531eaa, type: 3}
   m_IsPrefabParent: 0
@@ -1080,6 +1088,10 @@ Prefab:
       propertyPath: m_Name
       value: Gorilla (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100140, guid: dcdd9efcf7611a04092229da6a3ab488, type: 3}
+      propertyPath: m_TagString
+      value: Animal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dcdd9efcf7611a04092229da6a3ab488, type: 3}
   m_IsPrefabParent: 0
@@ -1149,6 +1161,10 @@ Prefab:
     - target: {fileID: 11100000, guid: 087a2ac1c75bbc34aa1d66d7766c1d5b, type: 3}
       propertyPath: m_PlayAutomatically
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100050, guid: 087a2ac1c75bbc34aa1d66d7766c1d5b, type: 3}
+      propertyPath: m_TagString
+      value: Animal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 087a2ac1c75bbc34aa1d66d7766c1d5b, type: 3}
@@ -1716,6 +1732,10 @@ Prefab:
       propertyPath: m_Name
       value: Aardonyx (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b7d960cf9ceab9348b53386b67531eaa, type: 3}
+      propertyPath: m_TagString
+      value: Animal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7d960cf9ceab9348b53386b67531eaa, type: 3}
   m_IsPrefabParent: 0
@@ -1971,6 +1991,14 @@ Prefab:
       propertyPath: gun
       value: 
       objectReference: {fileID: 1001532423}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: currAmmo
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: canShoot
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabParent: 0
@@ -2138,6 +2166,10 @@ Prefab:
     - target: {fileID: 400000, guid: b7d960cf9ceab9348b53386b67531eaa, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b7d960cf9ceab9348b53386b67531eaa, type: 3}
+      propertyPath: m_TagString
+      value: Animal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7d960cf9ceab9348b53386b67531eaa, type: 3}
@@ -2338,7 +2370,7 @@ GameObject:
   - 114: {fileID: 1528437266}
   m_Layer: 0
   m_Name: aardyonyx path1
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2450,6 +2482,10 @@ Prefab:
     - target: {fileID: 1500000, guid: 144b203f383094d16b1f336c74c47326, type: 2}
       propertyPath: maxEmission
       value: 272.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 144b203f383094d16b1f336c74c47326, type: 2}
+      propertyPath: m_TagString
+      value: Animal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 144b203f383094d16b1f336c74c47326, type: 2}
@@ -2573,6 +2609,10 @@ Prefab:
       propertyPath: m_Name
       value: Aardonyx (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b7d960cf9ceab9348b53386b67531eaa, type: 3}
+      propertyPath: m_TagString
+      value: Animal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7d960cf9ceab9348b53386b67531eaa, type: 3}
   m_IsPrefabParent: 0
@@ -2638,6 +2678,10 @@ Prefab:
     - target: {fileID: 100000, guid: b7d960cf9ceab9348b53386b67531eaa, type: 3}
       propertyPath: m_Name
       value: Aardonyx (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b7d960cf9ceab9348b53386b67531eaa, type: 3}
+      propertyPath: m_TagString
+      value: Animal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7d960cf9ceab9348b53386b67531eaa, type: 3}
@@ -2927,7 +2971,7 @@ GameObject:
   - 114: {fileID: 1728171176}
   m_Layer: 0
   m_Name: aardyonyx path2
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3020,8 +3064,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1733968653}
-  m_LocalRotation: {x: 0.14514056, y: 0.39854005, z: 0.064034656, w: -0.9033269}
-  m_LocalPosition: {x: 243.65398, y: 41.650284, z: 71.39551}
+  m_LocalRotation: {x: 0.09685713, y: 0.902405, z: 0.3154742, w: -0.27705598}
+  m_LocalPosition: {x: 324.0394, y: 17.619753, z: 517.80457}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3393,6 +3437,10 @@ Prefab:
     - target: {fileID: 100140, guid: dcdd9efcf7611a04092229da6a3ab488, type: 3}
       propertyPath: m_Name
       value: Gorilla (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100140, guid: dcdd9efcf7611a04092229da6a3ab488, type: 3}
+      propertyPath: m_TagString
+      value: Animal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dcdd9efcf7611a04092229da6a3ab488, type: 3}

@@ -57,7 +57,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		public int MAX_AMMO = 4;
 		public int currAmmo = 4;
 
-		public bool canShoot = false;
+		public bool canShoot = true;
 		public bool reloading = false;
 
 		private float waitTime = 0.0f;
