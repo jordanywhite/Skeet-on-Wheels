@@ -7,6 +7,9 @@ TagManager:
   - PlayerWaypoint
   - BirdWaypoint
   - Player
+  - Gun
+  - Bullet
+  - Animal
   layers:
   - Default
   - TransparentFX
