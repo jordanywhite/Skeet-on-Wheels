@@ -113,11 +113,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			}
 
 			for (int i = 0; i < bulletCount; i++) {
+
 				Quaternion bulletRot = transform.rotation;
 				bulletRot.x = Random.Range (-bulletSpread, bulletSpread);
 				bulletRot.y = Random.Range (-bulletSpread, bulletSpread);
 				Rigidbody instantiatedProjectile = Instantiate (projectile, spawn.transform.position, bulletRot) as Rigidbody;
-				instantiatedProjectile.velocity = transform.TransformDirection (new Vector3 (bulletRot.x, bulletRot.y, bulletSpeed));
+				float deltaY = gun.transform.position.y - spawn.transform.position.y;
+				float deltaX = gun.transform.position.x - spawn.transform.position.x;
+				float deltaZ = gun.transform.position.z - spawn.transform.position.z;
+				float angle = (float) Math.Atan (deltaY / deltaZ);
+				float y = bulletSpeed * (float) Math.Sin(angle) + bulletRot.y;
+				instantiatedProjectile.velocity = transform.TransformDirection (new Vector3 (bulletRot.x, y, bulletSpeed));
 			}
 
 			nextFire = Time.time + fireRate;
