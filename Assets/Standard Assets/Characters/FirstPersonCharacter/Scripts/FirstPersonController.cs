@@ -63,6 +63,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 		private float waitTime = 0.0f;
 		public float timeToReload = 3.0f;
+		private float waitedTime = 0f;
 
 		private float nextFire = 0.0f;
 
@@ -111,11 +112,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 			transform.position = new Vector3 (car.transform.position.x, car.transform.position.y + 3, car.transform.position.z);
 
+			if (reloading) {
+				loadGun ();
+			}
 
-			if (Input.GetMouseButtonDown (0)) {
-				if (currAmmo == 0 || reloading) {
-					loadGun ();
-				} else if (canShoot) {
+			else if (Input.GetMouseButtonDown (0) && canShoot) {
+				if (currAmmo == 0) {
+					GetComponent<AudioSource> ().PlayOneShot (reloadSound);
+					reloading = true;
+				}
+				else if (canShoot) {
 					checkShoot ();
 				}
 			}
@@ -149,17 +155,22 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			}
 
 			nextFire = Time.time + fireRate;
-			//currAmmo--;
-		}
-
-		private double RadianToDegree(double angle)
-		{
-			return angle * (180.0 / Math.PI);
+			currAmmo--;
 		}
 
 		private void loadGun ()
 		{
-//			canShoot = false;
+			
+			canShoot = false;
+			if (waitedTime == 0) {
+				waitedTime = Time.time;
+			}
+			if (Time.time > waitedTime + timeToReload) {
+				canShoot = true;
+				currAmmo = 4;
+				waitedTime = 0f;
+				reloading = false;
+			}
 //
 //			if (!reloading && !gun.transform.localPosition.Equals(reloadPos)) {
 //				gun.transform.localRotation = Quaternion.RotateTowards(gun.transform.localRotation, reloadPos, .5f*Time.deltaTime);
