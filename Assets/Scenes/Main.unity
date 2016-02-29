@@ -3004,8 +3004,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1187516286}
-  m_LocalRotation: {x: 0.2199458, y: 0.20286123, z: 0.046816837, w: -0.9530369}
-  m_LocalPosition: {x: 296.94, y: -693.3069, z: -217.39343}
+  m_LocalRotation: {x: 0.16912842, y: 0.21802327, z: 0.038393624, w: -0.96041}
+  m_LocalPosition: {x: 346.31757, y: 207.29005, z: 302.52637}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4578,8 +4578,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1733968653}
-  m_LocalRotation: {x: 0.2199458, y: 0.20286123, z: 0.046816837, w: -0.9530369}
-  m_LocalPosition: {x: 296.94, y: -891.90686, z: -217.39343}
+  m_LocalRotation: {x: 0.16912842, y: 0.21802327, z: 0.038393624, w: -0.96041}
+  m_LocalPosition: {x: 346.31757, y: 8.690044, z: 302.52637}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5485,7 +5485,8 @@ Prefab:
       propertyPath: m_TagString
       value: Car
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11400024, guid: 0fb4610dba67fc24cb2a6674fb155fc1, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0fb4610dba67fc24cb2a6674fb155fc1, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2102479346
