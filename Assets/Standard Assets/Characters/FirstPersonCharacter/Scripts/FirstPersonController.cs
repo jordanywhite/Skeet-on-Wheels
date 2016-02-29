@@ -48,6 +48,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		public GameObject car;
 		public GameObject spawn;
 		public GameObject gun;
+		public GameObject fireFrom;
 		public Rigidbody projectile;
 		public float bulletSpeed = 20;
 		public int bulletCount = 5;
@@ -73,6 +74,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 		public AudioClip shootSound;
 		public AudioClip reloadSound;
+
+		public int score = 0;
 
 		// Use this for initialization
 		private void Start ()
@@ -133,13 +136,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				bulletRot.y = Random.Range (-bulletSpread, bulletSpread);
 				Rigidbody instantiatedProjectile = Instantiate (projectile, spawn.transform.position, bulletRot) as Rigidbody;
 
-				float deltaX = spawn.transform.position.x - gun.transform.position.x;
-				float deltaY = spawn.transform.position.y - gun.transform.position.y;
-				float deltaZ = spawn.transform.position.z - gun.transform.position.z;
-
-				print ("x: " + deltaX + "\ny: " + deltaY + "\nz: " + deltaZ);
-				print("guny: " + gun.transform.position.y + "\ngunz: " + gun.transform.position.z);
-				print("spawny: " + spawn.transform.position.y + "\nspawnz: " + spawn.transform.position.z);
+				float deltaX = spawn.transform.position.x - fireFrom.transform.position.x;
+				float deltaY = spawn.transform.position.y - fireFrom.transform.position.y;
+				float deltaZ = spawn.transform.position.z - fireFrom.transform.position.z;
 
 				float tmp = (float) Math.Sqrt (deltaZ * deltaZ + deltaX * deltaX);
 				float tmp2 = (float) Math.Sqrt (deltaY * deltaY + tmp * tmp);

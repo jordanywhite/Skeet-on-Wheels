@@ -10,6 +10,9 @@ TagManager:
   - Gun
   - Bullet
   - Animal
+  - Score
+  - GUI
+  - Car
   layers:
   - Default
   - TransparentFX
