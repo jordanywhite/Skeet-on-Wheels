@@ -132,17 +132,30 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				bulletRot.x = Random.Range (-bulletSpread, bulletSpread);
 				bulletRot.y = Random.Range (-bulletSpread, bulletSpread);
 				Rigidbody instantiatedProjectile = Instantiate (projectile, spawn.transform.position, bulletRot) as Rigidbody;
-				float deltaY = gun.transform.position.y - spawn.transform.position.y;
-				float deltaZ = gun.transform.position.z - spawn.transform.position.z;
-				float angle = (float) Math.Atan ((double)(deltaY / deltaZ));
-				float y = (bulletSpeed* (float) Math.Sin(angle));
-				float z = bulletSpeed * (float)Math.Cos(angle);
 
-				instantiatedProjectile.velocity = transform.TransformDirection (new Vector3 (bulletRot.x, y + bulletRot.y, z));
+				float deltaX = spawn.transform.position.x - gun.transform.position.x;
+				float deltaY = spawn.transform.position.y - gun.transform.position.y;
+				float deltaZ = spawn.transform.position.z - gun.transform.position.z;
+
+				print ("x: " + deltaX + "\ny: " + deltaY + "\nz: " + deltaZ);
+				print("guny: " + gun.transform.position.y + "\ngunz: " + gun.transform.position.z);
+				print("spawny: " + spawn.transform.position.y + "\nspawnz: " + spawn.transform.position.z);
+
+				float tmp = (float) Math.Sqrt (deltaZ * deltaZ + deltaX * deltaX);
+				float tmp2 = (float) Math.Sqrt (deltaY * deltaY + tmp * tmp);
+
+				float scale = bulletSpeed / tmp2;
+
+				instantiatedProjectile.GetComponent<Rigidbody>().AddForce(new Vector3 (deltaX+bulletRot.x, deltaY+bulletRot.y, deltaZ)*scale);
 			}
 
 			nextFire = Time.time + fireRate;
 			//currAmmo--;
+		}
+
+		private double RadianToDegree(double angle)
+		{
+			return angle * (180.0 / Math.PI);
 		}
 
 		private void loadGun ()
