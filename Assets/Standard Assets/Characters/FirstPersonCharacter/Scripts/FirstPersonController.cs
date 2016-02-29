@@ -65,8 +65,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 		private float nextFire = 0.0f;
 
+		public float startOffsetY = 0f;
+		public float startOffsetZ = 0f;
+
 		private Quaternion reloadPos;
 		private Quaternion startPos;
+
+		public AudioClip shootSound;
+		public AudioClip reloadSound;
 
 		// Use this for initialization
 		private void Start ()
@@ -81,6 +87,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_Jumping = false;
 			m_AudioSource = GetComponent<AudioSource> ();
 			m_MouseLook.Init (transform, m_Camera.transform);
+
+
+			float deltaY = transform.position.y - spawn.transform.position.y;
+			float deltaZ = transform.position.z - spawn.transform.position.z;
+			float angle = (float)Math.Atan (deltaY / deltaZ);
+			startOffsetY = bulletSpeed * (float)Math.Sin (angle);
+			startOffsetZ = bulletSpeed * (float)Math.Cos (angle);
 
 			reloadPos = new Quaternion (gun.transform.localRotation.x, gun.transform.localRotation.y, 90f, gun.transform.localRotation.w);
 			startPos = gun.transform.localRotation;
@@ -112,18 +125,20 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				return;
 			}
 
-			for (int i = 0; i < bulletCount; i++) {
 
+			for (int i = 0; i < bulletCount; i++) {
+				GetComponent<AudioSource> ().PlayOneShot (shootSound);
 				Quaternion bulletRot = transform.rotation;
 				bulletRot.x = Random.Range (-bulletSpread, bulletSpread);
 				bulletRot.y = Random.Range (-bulletSpread, bulletSpread);
 				Rigidbody instantiatedProjectile = Instantiate (projectile, spawn.transform.position, bulletRot) as Rigidbody;
 				float deltaY = gun.transform.position.y - spawn.transform.position.y;
-				float deltaX = gun.transform.position.x - spawn.transform.position.x;
 				float deltaZ = gun.transform.position.z - spawn.transform.position.z;
-				float angle = (float) Math.Atan (deltaY / deltaZ);
-				float y = bulletSpeed * (float) Math.Sin(angle) + bulletRot.y;
-				instantiatedProjectile.velocity = transform.TransformDirection (new Vector3 (bulletRot.x, y, bulletSpeed));
+				float angle = (float) Math.Atan ((double)(deltaY / deltaZ));
+				float y = (bulletSpeed* (float) Math.Sin(angle));
+				float z = bulletSpeed * (float)Math.Cos(angle);
+
+				instantiatedProjectile.velocity = transform.TransformDirection (new Vector3 (bulletRot.x, y + bulletRot.y, z));
 			}
 
 			nextFire = Time.time + fireRate;
