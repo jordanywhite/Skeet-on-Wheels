@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 namespace UnityStandardAssets.Vehicles.Car
@@ -55,6 +57,9 @@ namespace UnityStandardAssets.Vehicles.Car
         private Transform[] m_ArrayOfTargets;
 
         [SerializeField]
+        private Button restart; 
+
+        [SerializeField]
         private bool m_StopWhenTargetReached;                                    // should we stop driving when we reach the target?
         [SerializeField]
         private float m_ReachTargetThreshold = 2;                                // proximity to target to consider we 'reached' it, and stop driving.
@@ -68,6 +73,17 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private int m_arrayIndex = 0;
 
+        private void Start()
+        {
+            restart = restart.GetComponent<Button>();
+            restart.gameObject.SetActive(false);
+            restart.onClick.AddListener(() => { restartLevel(); });
+        }
+
+        public void restartLevel()
+        {
+            Application.LoadLevel(Application.loadedLevel);
+        }
 
         private void Awake()
         {
@@ -83,6 +99,11 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void FixedUpdate()
         {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                restartLevel();
+            }   
+
             if (m_ArrayOfTargets[m_arrayIndex] == null || !m_Driving)
             {
                 // Car should not be moving,
@@ -207,6 +228,10 @@ namespace UnityStandardAssets.Vehicles.Car
                     else
                     {
                         SetTarget(m_ArrayOfTargets[m_arrayIndex]); //set the target to next waypoint
+                        if (m_arrayIndex == 18)
+                        {
+                            restart.gameObject.SetActive(true);
+                        }
                     }
                 }
             }
